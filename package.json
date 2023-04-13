@@ -10,7 +10,9 @@
     "eslintInit": "eslint --init",
     "lint": "eslint --fix ."
   },
-  "pre-commit": ["lint"],
+  "pre-commit": [
+    "lint"
+  ],
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -20,13 +22,19 @@
     "express-handlebars": "^4.0.4",
     "express-session": "^1.17.1",
     "method-override": "^3.0.0",
+    "mysql2": "^2.3.0",
     "passport": "^0.4.1",
-    "passport-local": "^1.0.0"
+    "passport-local": "^1.0.0",
+    "sequelize": "^6.6.5",
+    "sequelize-cli": "^6.2.0"
   },
   "devDependencies": {
     "eslint": "^8.38.0",
     "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-standard": "^17.0.0",
     "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-n": "^15.7.0",
+    "eslint-plugin-promise": "^6.1.1",
     "pre-commit": "^1.2.2"
   }
 }
