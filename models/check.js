@@ -17,7 +17,8 @@ module.exports = (sequelize, DataTypes) => {
     lastCheck: DataTypes.DATE,
     status: DataTypes.STRING,
     deadline: DataTypes.DATE,
-    firstCheck: DataTypes.DATE
+    firstCheck: DataTypes.DATE,
+    hour: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'Check',

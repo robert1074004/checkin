@@ -6,6 +6,6 @@ module.exports = {
   },
 
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.removeColumn('Checks', 'first_check', { type: Sequelize.DATE })
+    await queryInterface.removeColumn('Checks', 'first_check')
   }
 }
