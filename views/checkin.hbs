@@ -6,30 +6,23 @@
     <table class="table table-hover">
         <thead>
             <tr>
-                <th scope="col">check-deadline</th>
-                <th scope="col">f-check</th>
-                <th scope="col">l-check</th>
+                <th scope="col">date</th>
+                <th scope="col">firstCheck</th>
+                <th scope="col">lastCheck</th>
+                <th scope="col">hours</th>
                 <th scope="col">status</th>
             </tr>
         </thead>
         <tbody>
+            {{#each checks}}
             <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
+                <th scope="row">{{this.deadline}}</th>
+                <td>{{this.firstCheck}}</td>
+                <td>{{this.lastCheck}}</td>
+                <td>{{this.hour}}</td>
+                <td>{{this.status}}</td>
             </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td colspan="2">Larry the Bird</td>
-                <td>@twitter</td>
-            </tr>
+            {{/each}}
         </tbody>
     </table>
 </div>
