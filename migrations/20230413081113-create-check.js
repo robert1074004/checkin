@@ -12,7 +12,8 @@ module.exports = {
         type: Sequelize.DATE
       },
       status: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        defaultValue: '未全勤'
       },
       created_at: {
         allowNull: false,
