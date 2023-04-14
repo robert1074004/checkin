@@ -1,7 +1,7 @@
 'use strict'
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.addColumn('Checks', 'deadline', { type: Sequelize.DATEONLY })
+    await queryInterface.addColumn('Checks', 'deadline', { type: Sequelize.STRING })
   },
 
   down: async (queryInterface, Sequelize) => {

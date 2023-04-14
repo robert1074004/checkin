@@ -16,7 +16,7 @@ module.exports = (sequelize, DataTypes) => {
   Check.init({
     lastCheck: DataTypes.DATE,
     status: DataTypes.STRING,
-    deadline: DataTypes.DATE,
+    deadline: DataTypes.STRING,
     firstCheck: DataTypes.DATE,
     hour: DataTypes.INTEGER
   }, {
