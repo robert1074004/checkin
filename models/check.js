@@ -10,6 +10,7 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate (models) {
+      Check.belongsTo(models.User, { foreignKey: 'userId' })
     }
   };
   Check.init({
@@ -19,6 +20,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'Check',
+    tableName: 'Checks',
     underscored: true
   })
   return Check
