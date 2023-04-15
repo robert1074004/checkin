@@ -3,6 +3,13 @@ const checkinController = {
   getCheckin: (req, res) => {
     return Check.findAll({ where: { userId: req.user.id }, raw: true })
       .then(checks => {
+        console.log(checks[0].firstCheck, typeof (checks[0].firstCheck))
+        checks = checks.map(check => ({
+          ...check,
+          firstCheck: new Date(check.firstCheck.setHours(check.firstCheck.getHours() + 5)).toLocaleString(),
+          lastCheck: new Date(check.lastCheck.setHours(check.lastCheck.getHours() + 5)).toLocaleString(),
+          progress: (check.hour / 8) * 100
+        }))
         res.render('checkin', { checks })
       })
   },

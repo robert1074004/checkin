@@ -9,6 +9,7 @@
                 <th scope="col">date</th>
                 <th scope="col">firstCheck</th>
                 <th scope="col">lastCheck</th>
+                <th scope="col">progress</th>
                 <th scope="col">hours</th>
                 <th scope="col">status</th>
             </tr>
@@ -17,8 +18,14 @@
             {{#each checks}}
             <tr>
                 <th scope="row">{{this.deadline}}</th>
-                <td>{{this.firstCheck}}</td>
-                <td>{{this.lastCheck}}</td>
+                <td>{{ this.firstCheck }}</td>
+                <td>{{ this.lastCheck }}</td>
+                <td>
+                    <div class="progress" role="progressbar" aria-label="Success example" aria-valuenow="25"
+                        aria-valuemin="0" aria-valuemax="100">
+                        <div class="progress-bar bg-success text-dark" style="width: {{this.progress}}%">{{this.progress}}% </div>
+                    </div>
+                </td>
                 <td>{{this.hour}}</td>
                 <td>{{this.status}}</td>
             </tr>
