@@ -6,7 +6,7 @@ const checkinController = {
         checks = checks.map(check => ({
           ...check,
           firstCheck: new Date(check.firstCheck.setHours(check.firstCheck.getHours() + 5)).toLocaleString(),
-          lastCheck: new Date(check.lastCheck.setHours(check.lastCheck.getHours() + 5)).toLocaleString(),
+          lastCheck: check.lastCheck ? new Date(check.lastCheck.setHours(check.lastCheck.getHours() + 5)).toLocaleString() : '',
           progress: (check.hour / 8) * 100
         }))
         res.render('checkin', { checks })
@@ -31,7 +31,7 @@ const checkinController = {
         } else {
           const hour = Math.floor((now - check[0].dataValues.firstCheck) / (1000 * 60 * 60))
           if (hour < 8) {
-            return check[0].update({ lastCheck: now, hour })
+            return check[0].update({ lastCheck: now, hour, status: '缺勤' })
           }
           return check[0].update({ lastCheck: now, hour, status: '全勤' })
         }
