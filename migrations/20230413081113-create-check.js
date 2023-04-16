@@ -13,7 +13,7 @@ module.exports = {
       },
       status: {
         type: Sequelize.STRING,
-        defaultValue: '未全勤'
+        defaultValue: '缺勤'
       },
       created_at: {
         allowNull: false,
