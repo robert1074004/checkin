@@ -5,7 +5,8 @@ const checkinController = {
       .then(checks => {
         checks = checks.map(check => ({
           ...check,
-          firstCheck: new Date(check.firstCheck.setHours(check.firstCheck.getHours() + 5)).toLocaleString(),
+          deadline: new Date(check.firstCheck.setHours(check.firstCheck.getHours() + 5)).toLocaleDateString(),
+          firstCheck: check.firstCheck.toLocaleString(),
           lastCheck: check.lastCheck ? new Date(check.lastCheck.setHours(check.lastCheck.getHours() + 5)).toLocaleString() : '',
           progress: (check.hour / 8) * 100 > 100 ? 100 : (check.hour / 8) * 100
         }))
