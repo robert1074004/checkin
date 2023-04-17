@@ -6,7 +6,7 @@ const checkinController = {
         checks = checks.map(check => ({
           ...check,
           deadline: new Date(check.firstCheck.setHours(check.firstCheck.getHours() + 5)).toLocaleDateString('zh-Hans-CN', { timeZone: 'UTC' }),
-          firstCheck: check.firstCheck.toLocaleString(),
+          firstCheck: check.firstCheck.toLocaleString('zh-Hans-CN', { timeZone: 'UTC' }),
           lastCheck: check.lastCheck ? new Date(check.lastCheck.setHours(check.lastCheck.getHours() + 5)).toLocaleString('zh-Hans-CN', { timeZone: 'UTC' }) : '',
           progress: (check.hour / 8) * 100 > 100 ? 100 : (check.hour / 8) * 100
         }))
@@ -15,7 +15,7 @@ const checkinController = {
   },
   checkin: (req, res, next) => {
     // const now = new Date()
-    const now = new Date(2023, 3, 17, 5)
+    const now = new Date(2023, 3, 17, 4, 59)
     now.setHours(now.getHours() - 5)
     const deadline = now.toLocaleDateString('zh-Hans-CN')
     if (now.getDay() === 0 || now.getDay() === 6) throw new Error('非工作日不能打卡!')
