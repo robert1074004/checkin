@@ -8,7 +8,9 @@
     "dev": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "eslintInit": "eslint --init",
-    "lint": "eslint --fix ."
+    "lint": "eslint --fix .",
+    "dbmigrate": "npx sequelize db:migrate",
+    "seed": "npx sequelize db:seed:all"
   },
   "pre-commit": [
     "lint"
@@ -39,5 +41,8 @@
     "eslint-plugin-n": "^15.7.0",
     "eslint-plugin-promise": "^6.1.1",
     "pre-commit": "^1.2.2"
+  },
+  "engines": {
+    "node": ">=16.18.0 <17"
   }
 }
