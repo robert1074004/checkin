@@ -5,9 +5,9 @@ const checkinController = {
       .then(checks => {
         checks = checks.map(check => ({
           ...check,
-          deadline: new Date(check.firstCheck.setHours(check.firstCheck.getHours() + 5)).toLocaleDateString('zh-Hans-CN', { timeZone: 'UTC' }),
-          firstCheck: check.firstCheck.toLocaleString('zh-Hans-CN', { timeZone: 'UTC' }),
-          lastCheck: check.lastCheck ? new Date(check.lastCheck.setHours(check.lastCheck.getHours() + 5)).toLocaleString('zh-Hans-CN', { timeZone: 'UTC' }) : '',
+          deadline: new Date(check.firstCheck.setHours(check.firstCheck.getHours() + 5)).toLocaleDateString('zh-Hans-CN'),
+          firstCheck: check.firstCheck.toLocaleString('zh-Hans-CN'),
+          lastCheck: check.lastCheck ? new Date(check.lastCheck.setHours(check.lastCheck.getHours() + 5)).toLocaleString('zh-Hans-CN') : '',
           progress: (check.hour / 8) * 100 > 100 ? 100 : (check.hour / 8) * 100
         }))
         res.render('checkin', { checks })
