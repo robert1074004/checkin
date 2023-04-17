@@ -14,8 +14,7 @@ const checkinController = {
       })
   },
   checkin: (req, res, next) => {
-    // const now = new Date()
-    const now = new Date(2023, 3, 17, 4, 59)
+    const now = new Date()
     now.setHours(now.getHours() - 5)
     const deadline = now.toLocaleDateString('zh-Hans-CN')
     if (now.getDay() === 0 || now.getDay() === 6) throw new Error('非工作日不能打卡!')
