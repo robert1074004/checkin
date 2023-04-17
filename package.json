@@ -10,6 +10,7 @@
     "eslintInit": "eslint --init",
     "lint": "eslint --fix .",
     "dbmigrate": "npx sequelize db:migrate",
+    "dbmigrateundo": "npx sequelize db:seed:undo:all",
     "seed": "npx sequelize db:seed:all"
   },
   "pre-commit": [
