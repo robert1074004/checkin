@@ -5,18 +5,19 @@ const checkinController = {
       .then(checks => {
         checks = checks.map(check => ({
           ...check,
-          deadline: new Date(check.firstCheck.setHours(check.firstCheck.getHours() + 5)).toLocaleDateString(),
+          deadline: new Date(check.firstCheck.setHours(check.firstCheck.getHours() + 5)).toLocaleDateString('zh-CN'),
           firstCheck: check.firstCheck.toLocaleString(),
-          lastCheck: check.lastCheck ? new Date(check.lastCheck.setHours(check.lastCheck.getHours() + 5)).toLocaleString() : '',
+          lastCheck: check.lastCheck ? new Date(check.lastCheck.setHours(check.lastCheck.getHours() + 5)).toLocaleString('zh-CN') : '',
           progress: (check.hour / 8) * 100 > 100 ? 100 : (check.hour / 8) * 100
         }))
         res.render('checkin', { checks })
       })
   },
   checkin: (req, res, next) => {
-    const now = new Date()
+    // const now = new Date()
+    const now = new Date(2023, 3, 16, 5)
     now.setHours(now.getHours() - 5)
-    const deadline = now.toLocaleDateString()
+    const deadline = now.toLocaleDateString('zh-CN')
     if (now.getDay() === 0 || now.getDay() === 6) throw new Error('非工作日不能打卡!')
     return Check.findOrCreate({
       where: { deadline, userId: req.user.id },
