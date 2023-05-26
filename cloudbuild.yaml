@@ -4,5 +4,6 @@ steps:
   - name: 'gcr.io/cloud-builders/npm'
     args: ['run', 'build']
   - name: 'gcr.io/cloud-builders/gcloud'
-    env: ['production']
     args: ['run', 'deploy', 'my-service', '--image', 'gcr.io/my-project/my-image']
+    env:
+      - 'PORT=8080'
