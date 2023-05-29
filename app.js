@@ -11,7 +11,7 @@ const app = express()
 if (process.NODE_ENV !== 'production') {
   require('dotenv').config()
 }
-const PORT = process.env.PORT || 8080
+const port = process.env.PORT || 8080
 app.engine('hbs', exphbs({ defaultLayout: 'main', extname: '.hbs', helpers: handlebarsHelpers }))
 app.set('view engine', 'hbs')
 app.use(express.urlencoded({ extended: true }))
@@ -28,6 +28,6 @@ app.use((req, res, next) => {
 app.use(methodOverride('_method'))
 app.use(routes)
 
-app.listen(PORT, () => {
-  console.log(`App is running on http://localhost:${PORT}`)
+app.listen(port, () => {
+  console.log(`App is running on http://localhost:${port}`)
 })
