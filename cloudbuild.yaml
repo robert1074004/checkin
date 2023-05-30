@@ -7,3 +7,4 @@ steps:
     args: ['run', 'deploy', 'checkin', '--image', 'gcr.io/x-catwalk-386401/my-image']
     env:
       - 'PORT=8080'
+      - 'ENV=production'
