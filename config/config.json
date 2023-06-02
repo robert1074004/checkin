@@ -14,10 +14,6 @@
     "dialect": "mysql"
   },
   "production": {
-    "username": "root",
-    "password": "abc83213",
-    "database": "basketball",
-    "host": "35.221.255.32",
-    "dialect": "mysql"
+    
   }
 }
