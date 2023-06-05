@@ -6,7 +6,7 @@ const basename = path.basename(__filename)
 const env = process.env.NODE_ENV || 'development'
 const config = require(path.resolve(__dirname, '../config/config.json'))[env]
 const db = {}
-
+console.log(process.env.NODE_ENV, config.host, config.database, config.username, config.password)
 const sequelize = new Sequelize(config.database, config.username, config.password, {
   host: config.host,
   port: 3306,
