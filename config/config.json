@@ -14,6 +14,10 @@
     "dialect": "mysql"
   },
   "production": {
-    "use_env_variable" : "FLY_CONSUL_URL"
+    "username": "robert",
+    "password": "abc83213",
+    "database": "checkin",
+    "host": "34.80.245.227",
+    "dialect": "mysql"
   }
 }
