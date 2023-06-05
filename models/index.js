@@ -10,8 +10,8 @@ const db = {}
 const sequelize = new Sequelize(config.database, config.username, config.password, {
   host: config.host,
   port: 3306,
-  dialect: 'mysql',
-  timeout: 5000
+  dialect: config.dialect,
+  timeout: 500000
 })
 
 fs
