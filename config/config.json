@@ -17,7 +17,7 @@
     "username": "robert",
     "password": "abc83213",
     "database": "checkin",
-    "host": "34.80.245.227",
+    "host": "34.85.83.254",
     "dialect": "mysql"
   }
 }
