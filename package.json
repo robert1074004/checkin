@@ -9,7 +9,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "eslintInit": "eslint --init",
     "lint": "eslint --fix .",
-    "dbmigrate": "npx sequelize db:migrate",
+    "dbmigrate": "npx sequelize db:migrate && npx sequelize db:migrate seed:all",
     "dbmigrateundo": "npx sequelize db:migrate:undo:all",
     "seed": "npx sequelize db:seed:all"
   },

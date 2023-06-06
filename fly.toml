@@ -11,6 +11,10 @@ primary_region = "nrt"
   SESSION_SECRET = 'secret'
   NODE_ENV = "production"
 
+[deploy]
+  release_command = "npm run dbmigrate"
+
+
 [http_service]
   internal_port = 3000
   force_https = true
