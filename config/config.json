@@ -17,7 +17,7 @@
     "username": "root",
     "password": "MYSQL_ROOT_PASSWORD",
     "database": "checkin",
-    "host": "mysql-database.internal",
+    "host": "withered-resonance-7779.internal",
     "dialect": "mysql"
   }
 }
